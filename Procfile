@@ -1,0 +1,1 @@
+web: bundle exec rackup private_pub.ru -p $PORT -s thin -E production

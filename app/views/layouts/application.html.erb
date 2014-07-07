@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title_helper(@title) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+  <%= javascript_tag "var AUTH_TOKEN = '#{form_authenticity_token}';" if protect_against_forgery?%>
+  <!--
+  /* @license
+   * MyFonts Webfont Build ID 1316338, 2011-10-03T10:50:35-0400
+   * 
+   * The fonts listed in this notice are subject to the End User License
+   * Agreement(s) entered into by the website owner. All other parties are 
+   * explicitly restricted from using the Licensed Webfonts(s).
+   * 
+   * You may obtain a valid license at the URLs below.
+   * 
+   * Webfont: Proxima Nova Thin by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/thin/
+   * Licensed pageviews: 10,000,000
+   * 
+   * Webfont: Proxima Nova Regular by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+   * Licensed pageviews: 10,000,000
+   * 
+   * Webfont: Proxima Nova Semibold by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+   * Licensed pageviews: 10,000,000
+   * 
+   * Webfont: Proxima Nova Light by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+   * Licensed pageviews: 10,000,000
+   * 
+   * Webfont: Proxima Nova Bold by Mark Simonson
+   * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+   * Licensed pageviews: 10,000,000
+   * 
+   * 
+   * License: http://www.myfonts.com/viewlicense?type=web&buildid=1316338
+   * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+   * 
+   * © 2011 Bitstream Inc
+  */
+  -->
+  <link rel="stylesheet" 
+  href="//identity.uchicago.edu/c/fonts/proximanova.css">
+  <%= javascript_include_tag "private_pub" %>
+</head>
+<body>
+
+	<header>
+		
+		<div id = 'line'></div>
+		
+		<h1>
+			<%= link_to root_path do %>
+			<div id = 'shield'></div>
+			<span style = 'padding-left:14px'>NEGOTIATIONS</span>
+			<% end %>
+		</h1>
+		
+		<nav>
+			<% if signed_in? %>
+			
+			<% end %>
+			<li><%= link_to 'About', about_path %></li>
+			<% unless signed_in? %>
+			<li><%= link_to 'Log In', log_in_path %></li>
+			<% else %>
+			<li class = 'dropdown_trigger'><%= link_to 'Account', '#' %></li>
+			<ul class = 'dropdown'>
+				<!-- <li><%= link_to 'Profile', user_path(current_user) %></li> -->
+				<li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+				<div class = 'divider'></div>
+				<li><%= link_to 'Log Out', log_out_path, method: 'delete' %></li>
+			</ul>
+			<% end %>
+		</nav>
+		
+	</header>
+	
+	<% flash.each do |key, value| %>
+	<div class = "flash flash-<%= key %>">
+		<%= value %>
+	</div>
+	<% end %>
+	
+
+	<section id = "<%= @page_id %>">
+
+	<%= yield %>
+
+	</section>
+
+  	<!-- <%= debug(params) if Rails.env.development? %> -->
+
+	<footer>
+		<div>
+		
+		<p>Copyright <%= Time.now.year %> — <span>Keysar Lab</span><p>
+
+		</div>
+	</footer>
+  <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' %>
+  <%= javascript_include_tag "coffeescript" %>
+  <script src="/hashchange.js" type="text/javascript"></script>
+  <script src="/easytabs.js" type="text/javascript"></script>
+</body>
+</html>

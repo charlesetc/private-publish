@@ -1,0 +1,54 @@
+<h1>Sign Up</h1>
+
+<div id = 'sign_up_form' class = 'basic_form'>
+	
+	<%= form_for(@user) do |f| %>
+		
+		<%= render 'shared/error_messages' %>
+		
+		<div><%= f.label :username %></div>
+		<div><%= f.text_field :username, 
+			placeholder: 'johnsmith' %></div>
+		
+		<div><%= f.label :name %></div>
+		<div><%= f.text_field :name, 
+			placeholder: 'John Smith' %></div>
+
+		<div><%= f.label :email %></div>
+		<div><%= f.text_field :email %></div>
+		
+		<div><%= f.label :password %></div>
+		<div><%= f.password_field :password %></div>
+		
+		<div><%= f.label :password_confirmation, 'Confirmation' %></div>
+		<div id = 'last_input'><%= f.password_field :password_confirmation %></div>
+		
+    <div id = 'wizard_page'>
+  		<div><%= f.label :age %></div>
+  		<div><%= f.number_field :age, in: (1..110), step: 1 %></div>
+      
+  		<div><%= f.label :sex %></div>
+  		<div><%= f.select :sex, 
+        options_for_select([['Male', 'male'], ['Female', 'female']]) %></div>
+      
+  		<div><%= f.label :native_languages %></div>
+  		<div><%= f.text_field :native_languages,
+        value: '', placeholder: 'Korean, English' %></div>
+      
+  		<div><%= f.label :foreign_languages %></div>
+  		<div><%= f.text_field :foreign_languages, value: '', placeholder: 'Spanish, German' %></div>
+      
+  		<div><%= f.label :secure_key %></div>
+  		<div><%= f.text_field :secure_key %></div>
+      
+
+      <%= button_tag 'Back', class: 'back_button', style: 'font-size:15px;', type: 'button' %>
+    
+  		<%= f.submit "Submit", id: 'submit_button' %>
+    </div>
+    
+		
+	<% end %>
+  
+  <%= button_tag 'Next', class: 'next_button', style: 'font-size:15px;' %>
+</div>

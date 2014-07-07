@@ -1,0 +1,538 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+/* General */
+
+* {
+	font-family: verdana, 'ProximaNova-Regular';
+	padding: 0px, 0px;
+	margin: 0px, 0px;
+	
+}
+
+li {
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+	color: #D6D6CE;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'ProximaNova-Semibold'
+}
+
+
+body::after {
+  content: "";
+  background: url(phoenix.png);
+  background-repeat:no-repeat;
+  background-size: 90% auto;
+  background-position: 50% 60px; 
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+/* Home Main Section */
+
+#home, #about, #reference {
+	width: 70%;
+	margin: auto;
+	margin-top:50px;
+	padding: 10px 30px 30px 30px;
+	background: rgba(255,255,255, 0.7);
+	border-radius: 15px;
+	text-align: left;
+	box-shadow:0px 0px 2px rgba(0,0,0,.65);
+	-webkit-box-shadow:0px 0px 2px rgba(0,0,0,.65);
+}
+
+#home {
+	text-align: center;
+	margin-top:80px;
+	width:50%;
+	min-width:300px;
+}
+
+
+#home p {
+	color: black;
+	font-size: 20px;
+}
+
+#home h1 {
+	font-size: 50px;
+}
+
+#home h3 {
+	text-transform:uppercase;
+	position:relative;
+	top:15px;
+}
+
+#home a {
+	box-shadow:0px 0px 1px black;
+	color:white;
+	padding:8px;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	background: #800;
+	
+}
+
+#home a:hover {
+	color:#800;
+	background:white;
+}
+
+#home a:active {
+	position:relative;
+	top:1px;
+}
+
+#reference h1, #about h1 {
+	font-size: 30px;
+	text-align: center;
+} 
+
+
+/* Header */
+
+#shield {
+	display:inline-block;
+	width:10px;
+	height:10px;
+	padding:10px;
+	margin:-10px;
+	background:url(shield_grey.png);
+	background-size:100% 100%;
+	position:relative;
+	top:-4px;
+	left:4px;
+}
+
+header h1 a:hover #shield {
+	background:url(shield_maroon.png);
+	background-size:100% 100%;
+}
+
+header li {
+	padding-left: 23px;
+}
+
+header a {
+	color: #D6D6CE;
+	font-family: 'ProximaNova-Regular'
+}
+
+header a:hover {
+	border-bottom:none;
+	color:#800;
+}
+
+header nav {
+	position: absolute;
+	right: 42px;
+	top:21px;
+}
+
+header {
+	background: #333;
+	padding-top:8px;
+	padding-left:20px;
+	position:relative;
+	width: 101.3%;
+	left:-20px;
+	top:-10px;
+}
+
+
+header h1 {
+	font-size: 26px;
+	position:relative;
+	top:-9px;
+	left:20px;
+}
+
+header #line {
+	position:absolute;
+	width:100%;
+	top: 2px;
+	left:0px;
+	border-bottom:1px solid #800;
+}
+
+
+
+
+/* Footer */
+
+footer {
+	margin-top:20px;
+	width: 100%;
+	font-size:12px;
+}
+
+.fixed_footer {
+	position:fixed;
+	bottom:0px;
+}
+
+footer div {
+	float:right;
+	width:100%;
+	text-align:right;
+	padding-right:40px;
+	border-top: #800 solid 1px;
+}
+
+
+
+/* For the Debug Box */
+
+pre.debug_dump {
+	background: #eee;
+	border: 1px solid #ccc;
+	margin: 30px;
+	margin-top: 90px;
+	padding: 10px;
+}
+
+
+
+/* Sign Up Page, Log In Page */
+
+#sign_up, #log_in, #settings, #negotiation_creation, #scenario_creation {
+	margin: auto;
+	padding: 40px;
+	border-radius: 10px;
+	width: 50%;
+	background: rgba(255,255,255, 0.7);
+	box-shadow:0px 0px 2px rgba(0,0,0,.65);
+	-webkit-box-shadow:0px 0px 2px rgba(0,0,0,.65);
+}
+
+
+#sign_up h1, #log_in h1, #settings h1, #negotiation_creation h1, #scenario_creation h1 {
+	font-size: 35px;
+	position:relative;
+	top: -30px;
+	border-bottom: 1px solid #800;
+
+}
+
+.basic_form {
+	position:relative;
+	top: -30px;
+	left:30px;
+}
+
+.basic_form input, button, .basic_form textarea, .basic_form select {
+	font-size: 20px;
+	border: 1px solid black;
+	background:white;
+	border-radius:5px;
+	padding-left:5px;
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+.basic_form textarea {
+	width:80%;
+	height:100px;
+}
+
+.basic_form #submit_button, button {
+	font-size: 16px;
+	background:white;
+	margin-top: 10px;
+	padding-right:8px;
+	padding-left:8px;
+	cursor: pointer;
+}
+
+#log_in a {
+	color:black;
+	text-decoration: underline;
+}
+
+#log_in a:hover {
+	color:#800;
+	text-decoration:none;
+}
+
+
+/* Easy Tabs */
+
+#tab-container {
+	width:70%;
+	margin:auto;
+}
+
+.etabs { 
+	margin: 0; padding: 0;
+	width:100%;
+	text-align:center;
+}
+
+.etabs a {
+	color:black;
+}
+.tab_link { display: inline-block; zoom:1; *display:inline; background: rgba(255,255,255, 0.7);
+	 border: solid 1px #999; border-bottom: none; -moz-border-radius: 4px 4px 0 0;
+	  -webkit-border-radius: 4px 4px 0 0; }
+.tab_link a { font-size: 14px; line-height: 2em; 
+	display: block; padding: 0 10px; outline: none; }
+.tab_link a:hover { text-decoration: underline; }
+.tab_link.active { background: rgba(255,255,255, 0.7); padding-top: 6px;
+	 position: relative; top: 1px; border-color: #800;}
+.tab_link a.active { font-weight: bold; color: #800; }
+.tab-container .panel-container { background: #fff; 
+	border: solid #666 1px; padding: 10px; 
+	-moz-border-radius: 0 4px 4px 4px;
+	 -webkit-border-radius: 0 4px 4px 4px; }
+	 
+.tab {
+	background: rgba(255,255,255, 0.7);
+	padding:20px;
+	padding-top:1px;
+	box-shadow:0px 0px 2px rgba(0,0,0,.65);
+	-webkit-box-shadow:0px 0px 2px rgba(0,0,0,.65);
+}
+
+
+
+
+
+/* Wizard Style */
+/* Capes and Pointy hats */
+
+#wizard_page {
+	display:none;
+}
+
+
+
+/* Error Messages */
+
+.field_with_errors {
+	color: #800;
+	padding: 0px;
+	margin:0px;
+}
+
+#sign_up_form div.field_with_errors input {
+	border: solid 1px #800;
+}
+
+span.error_designation {
+	color:#800;
+}
+
+#error_log ul {
+	font-size: 12px;
+	line-height: 96%;
+}
+
+
+
+/* Flash Style */
+
+.flash {
+	margin: auto;
+	margin-top:0px;
+	width:70%;
+	padding: 10px;
+	text-align:center;
+	border-radius:10px;
+	color: white;
+	position:relative;
+	top:-15px;
+	left: -1000px;
+}
+
+.flash-success {
+	background: #47B5FF;
+}
+
+.flash-warning {
+	background: #FF3399;
+}
+
+.flash-error {
+	background: #FF3399;
+}
+
+
+/* Dropdown Menu */
+
+.dropdown {
+	z-index:40;
+	background: #333;
+	width: 130px;
+	margin: 0px;
+	list-style:none;
+	padding: 10px 0px 10px 0px;
+	position:relative;
+	left:64px;
+}
+
+.dropdown li {
+	display:block;
+	margin: 20px 10px 0px 10px;
+	border-bottom: 1px solid #333;
+}
+
+.dropdown a:hover {
+	border-bottom: none;
+	color:#D6D6CE;
+}
+
+.dropdown li:hover {
+	border-bottom: 1px solid #800;
+}
+
+.dropdown .divider {
+	width: 100%;
+	background: #800;
+	height: 1px;
+	position:relative;
+	top:10px;
+}
+
+
+/* User Table */
+
+#tab_admin h2 {
+	padding-top:10px;
+	position:relative;
+	top:10px;
+}
+
+.tab h2 {
+	font-size:25px;
+}
+
+.user_table, table {
+	border-collapse:collapse;
+	text-align:center;
+	width: 100%;
+}
+
+.user_table .name_entry, .entry {
+	text-align:left;
+}
+
+.user_table td, td {
+	font-size:16px;
+	padding: 4px;
+	cursor: crosshair;
+}
+
+.selected_row {
+	background: #47B5FF;
+}
+
+
+#entry_definitions td {
+	background: #555;
+	color:white;
+	font-size:18px;
+	padding: 0px 5px;
+	border:1px solid #555;
+	cursor:default;
+}
+
+.table_scroll {
+	height:150px;
+	overflow-y:scroll;
+	/*background: #eee;*/
+	border:1px solid #aaa;
+}
+
+.admin_button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+/* Messaging Style */
+
+.message_content {
+    outline: none;	
+	font-size: 20px;
+	border: 1px solid black;
+	background:white;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	padding-left:10px;
+	margin:auto;
+	margin-top:2px;
+	margin-bottom:2px;
+	width:100%;
+	height:25px;
+}
+
+.message_content:focus {
+	box-shadow: 0px 0px 2px 1px #47B5FF;
+}
+
+.message_index {
+	height:100px;
+	border: 4px double #333;
+	width:100%;
+	position:relative;
+	overflow: scroll;
+	z-index:21;
+	margin-bottom:20px;
+	padding-top:7px;
+}
+
+
+
+.message_index span {
+	margin: 4px 12px 4px 12px;
+	background: white;
+	border-radius:7px;
+	-webkit-border-radius:7px;
+	box-shadow: 0px 0px 5px -1px black;
+	z-index:20;
+	padding:4px 8px;
+	max-width:40%;
+	display:inline-block;
+	word-wrap:break-word
+}
+
+.message_index div {
+	width: 100%;
+	position:relative;
+}
+
+.message_index .receiver_message  span {
+	float:left; clear:both;
+}
+
+.message_index .sender_message  span {
+	float:right; clear:both;
+}
+.message_index .sender_message::after, .message_index .receiver_message::after {
+}
